@@ -26,7 +26,7 @@
   },
   "require": {
     "php": ">=5.4.8",
-    "psr/http-message": "~0.5.1"
+    "psr/http-message": "dev-feature/full-mutability@dev"
   },
   "require-dev": {
     "phpunit/PHPUnit": "3.7.*",
@@ -44,5 +44,11 @@
     "files": [
       "test/TestAsset/Functions.php"
     ]
-  }
+  },
+  "repositories": [
+    {
+      "url": "git://github.com/weierophinney/http-message.git",
+      "type": "vcs"
+    }
+  ]
 }
