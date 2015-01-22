@@ -352,4 +352,14 @@ class UriTest extends TestCase
         $new = $uri->withPath('');
         $this->assertEquals('', $new->getPath());
     }
+
+    public function testGetPathReturnsCorrectPath()
+    {
+        /*
+         * If parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+         * is used we get '/'
+        */
+        $uri = new Uri('http://example.com');
+        $this->assertEquals('/', $uri->getPath());
+    }
 }
