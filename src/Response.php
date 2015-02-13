@@ -12,10 +12,8 @@ use Psr\Http\Message\StreamableInterface;
  * implemented such that they retain the internal state of the current
  * message and return a new instance that contains the changed state.
  */
-class Response implements ResponseInterface
+class Response extends Message implements ResponseInterface
 {
-    use MessageTrait;
-
     /**
      * Map of standard HTTP status code/reason phrases
      *

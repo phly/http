@@ -14,10 +14,8 @@ use Psr\Http\Message\UriInterface;
  * implemented such that they retain the internal state of the current
  * message and return a new instance that contains the changed state.
  */
-class Request implements RequestInterface
+class Request extends Message implements RequestInterface
 {
-    use MessageTrait;
-
     /**
      * @var string
      */
