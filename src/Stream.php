@@ -304,6 +304,7 @@ class Stream implements StreamableInterface
      * Retrieve metadata from the underlying stream.
      * 
      * @see http://php.net/stream_get_meta_data for a description of the expected output.
+     * @param string $key
      * @return array
      */
     public function getMetadata($key = null)

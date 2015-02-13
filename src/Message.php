@@ -11,22 +11,22 @@ use Psr\Http\Message\StreamableInterface;
  *
  * @link https://github.com/php-fig/http-message/tree/master/src/MessageInterface.php
  */
-trait MessageTrait
+abstract class Message implements MessageInterface
 {
     /**
      * @var array
      */
-    private $headers = [];
+    protected $headers = [];
 
     /**
      * @var string
      */
-    private $protocol = '1.1';
+    protected $protocol = '1.1';
 
     /**
      * @var StreamableInterface
      */
-    private $stream;
+    protected $stream;
 
     /**
      * Retrieves the HTTP protocol version as a string.
@@ -274,7 +274,7 @@ trait MessageTrait
      * @param array $array
      * @return bool
      */
-    private function arrayContainsOnlyStrings(array $array)
+    protected function arrayContainsOnlyStrings(array $array)
     {
         return array_reduce($array, [ __CLASS__, 'filterStringValue'], true);
     }
@@ -287,7 +287,7 @@ trait MessageTrait
      * @param array $originalHeaders Headers to filter.
      * @return array Filtered headers.
      */
-    private function filterHeaders(array $originalHeaders)
+    protected function filterHeaders(array $originalHeaders)
     {
         $headers = [];
         foreach ($originalHeaders as $header => $value) {
@@ -318,7 +318,7 @@ trait MessageTrait
      * @param mixed $item
      * @return bool
      */
-    private static function filterStringValue($carry, $item)
+    protected static function filterStringValue($carry, $item)
     {
         if (! is_string($item)) {
             return false;

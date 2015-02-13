@@ -114,6 +114,7 @@ abstract class ServerRequestFactory
      *
      * Pre-processes and returns the $_SERVER superglobal.
      *
+     * @param array $server
      * @return array
      */
     public static function normalizeServer(array $server)
@@ -242,6 +243,7 @@ abstract class ServerRequestFactory
     /**
      * Marshal the host and port from HTTP headers and/or the PHP environment
      *
+     * @param stdClass $accumulator
      * @param array $server
      * @param MessageInterface $request
      * @return array Array with two members, host and port, at indices 0 and 1, respectively
@@ -255,6 +257,7 @@ abstract class ServerRequestFactory
     /**
      * Marshal the host and port from HTTP headers and/or the PHP environment
      *
+     * @param stdClass $accumulator
      * @param array $server
      * @param array $headers
      * @return array Array with two members, host and port, at indices 0 and 1, respectively
@@ -336,7 +339,7 @@ abstract class ServerRequestFactory
      * Strip the query string from a path
      *
      * @param mixed $path
-     * @return void
+     * @return string
      */
     public static function stripQueryString($path)
     {
