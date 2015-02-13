@@ -351,7 +351,7 @@ class ServerRequest extends Request implements ServerRequestInterface
      * Set the body stream
      *
      * @param string|resource|StreamableInterface $stream
-     * @return void
+     * @return StreamableInterface
      */
     private function getStream($stream)
     {

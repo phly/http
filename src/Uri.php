@@ -476,6 +476,8 @@ class Uri implements UriInterface
 
     /**
      * Parse a URI into its parts, and set the properties
+     *
+     * @param string $uri
      */
     private function parseUri($uri)
     {
