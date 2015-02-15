@@ -79,10 +79,7 @@ class UriTest extends TestCase
             'false'     => [ false ],
             'string'    => [ 'string' ],
             'array'     => [ [ 3000 ] ],
-            'object'    => [ (object) [ 3000 ] ],
-            'zero'      => [ 0 ],
-            'too-small' => [ -1 ],
-            'too-big'   => [ 65536 ],
+            'object'    => [ (object) [ 3000 ] ]
         ];
     }
 
@@ -93,6 +90,25 @@ class UriTest extends TestCase
     {
         $uri = new Uri('https://user:pass@local.example.com:3001/foo?bar=baz#quz');
         $this->setExpectedException('InvalidArgumentException', 'Invalid port');
+        $new = $uri->withPort($port);
+    }
+
+    public function badRangePorts()
+    {
+        return [
+            'too-small' => [ -1 ],
+            'too-big'   => [ 65536 ],
+            'zero'      => [ 0 ]
+        ];
+    }
+
+    /**
+     * @dataProvider badRangePorts
+     */
+    public function testWithPortRaisesExceptionForInvalidPortRanges($port)
+    {
+        $uri = new Uri('https://user:pass@local.example.com:3001/foo?bar=baz#quz');
+        $this->setExpectedException('OutOfRangeException', 'Invalid port');
         $new = $uri->withPort($port);
     }
 

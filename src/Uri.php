@@ -2,6 +2,7 @@
 namespace Phly\Http;
 
 use InvalidArgumentException;
+use OutOfRangeException;
 use Psr\Http\Message\UriInterface;
 
 /**
@@ -342,7 +343,8 @@ class Uri implements UriInterface
      * @param null|int $port Port to use with the new instance; a null value
      *     removes the port information.
      * @return self A new instance with the specified port.
-     * @throws InvalidArgumentException for invalid ports.
+     * @throws InvalidArgumentException for invalid data types.
+     * @throws OutOfRangeException if port is not in the valid range.
      */
     public function withPort($port)
     {
@@ -356,7 +358,7 @@ class Uri implements UriInterface
         $port = (int) $port;
 
         if ($port < 1 || $port > 65535) {
-            throw new InvalidArgumentException(sprintf(
+            throw new OutOfRangeException(sprintf(
                 'Invalid port "%d" specified; must be a valid TCP/UDP port',
                 $port
             ));
