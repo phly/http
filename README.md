@@ -1,6 +1,16 @@
 phly/http
 =========
 
+> ## Abandoned! Or, rather, rebranded!
+>
+> phly/http has moved to the zendframework organization as
+> [zend-diactoros](https://github.com/zendframework/zend-diactoros)
+> (Diactoros, literally "the messenger," an epithet for Hermes).
+>
+> Please use that package instead, and contribute issues and pull requests
+> against it I have closed issues and pull requests against phly/http at this
+> time.
+
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phly/http/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phly/http/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/phly/http/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phly/http/?branch=master)
 [![Scrutinizer Build Status](https://scrutinizer-ci.com/g/phly/http/badges/build.png?b=master)](https://scrutinizer-ci.com/g/phly/http/build-status/master)
