@@ -70,7 +70,7 @@ $request = new Phly\Http\Request(
 
 // If you want to set a non-origin-form request target, set the
 // request-target explicitly:
-$request = $request->withRequestTarget((string) $uri);       // absolute-form
+$request = $request->withRequestTarget((string) $uri));       // absolute-form
 $request = $request->withRequestTarget($uri->getAuthority(); // authority-form
 $request = $request->withRequestTarget('*');                 // asterisk-form
 
