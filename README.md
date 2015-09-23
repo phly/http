@@ -71,7 +71,7 @@ $request = new Phly\Http\Request(
 // If you want to set a non-origin-form request target, set the
 // request-target explicitly:
 $request = $request->withRequestTarget((string) $uri));       // absolute-form
-$request = $request->withRequestTarget($uri->getAuthority(); // authority-form
+$request = $request->withRequestTarget($uri->getAuthority()); // authority-form
 $request = $request->withRequestTarget('*');                 // asterisk-form
 
 // Once you have the instance:
@@ -81,7 +81,7 @@ $response = $client->send($request);
 printf("Response status: %d (%s)\n", $response->getStatusCode(), $response->getReasonPhrase());
 printf("Headers:\n");
 foreach ($response->getHeaders() as $header => $values) {
-  printf("    %s: %s\n", $header, implode(', ', $values));
+  printf("%s: %s\n", $header, implode(', ', $values));
 }
 printf("Message:\n%s\n", $response->getBody());
 ```
