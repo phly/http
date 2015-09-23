@@ -78,7 +78,7 @@ $response = $client->send($request);
 printf("Response status: %d (%s)\n", $response->getStatusCode(), $response->getReasonPhrase());
 printf("Headers:\n");
 foreach ($response->getHeaders() as $header => $values) {
-  printf("   %s: %s\n", $header, implode(', ', $values));
+  printf("%s: %s\n", $header, implode(', ', $values));
 }
 printf("Message:\n%s\n", $response->getBody());
 ```
