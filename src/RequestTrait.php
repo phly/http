@@ -240,7 +240,7 @@ trait RequestTrait
         $new = clone $this;
         $new->uri = $uri;
 
-        if ($preserveHost) {
+        if (! $preserveHost) {
             return $new;
         }
 
